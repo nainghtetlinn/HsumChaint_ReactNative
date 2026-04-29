@@ -20,10 +20,11 @@ const SpaceScreen = () => {
       >
         <View className="gap-2 items-center">
           <Image className="w-16 h-16" source={images.mageStackFill} />
-          <Text className="font-semibold" variant={"label1"} title="No Monastery Space" />
+          <Text variant={"label1"} weight={"semibold"} title="No Monastery Space" />
           <Text
             className="text-center"
             variant={"label2"}
+            weight={"regular"}
             title="Looks like you don't have a monastery space yet. You can create your own or join an existing one now."
           />
         </View>

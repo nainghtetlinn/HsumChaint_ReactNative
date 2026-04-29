@@ -2,6 +2,7 @@ import "@/global.css";
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { KeyboardProvider } from "react-native-keyboard-controller";
 import "react-native-reanimated";
 
 export const unstable_settings = {
@@ -10,14 +11,16 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   return (
-    <ThemeProvider value={DefaultTheme}>
-      <Stack initialRouteName="(space)">
-        <Stack.Screen name="(space)" options={{ headerShown: false }} />
-        <Stack.Screen name="login" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: "modal", title: "Modal" }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <KeyboardProvider>
+      <ThemeProvider value={DefaultTheme}>
+        <Stack initialRouteName="(space)">
+          <Stack.Screen name="(space)" options={{ headerShown: false }} />
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="modal" options={{ presentation: "modal", title: "Modal" }} />
+        </Stack>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </KeyboardProvider>
   );
 }
