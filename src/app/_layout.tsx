@@ -11,13 +11,9 @@ export const unstable_settings = {
 export default function RootLayout() {
   return (
     <ThemeProvider value={DefaultTheme}>
-      <Stack initialRouteName="login">
-        <Stack.Screen
-          name="login"
-          options={{
-            headerShown: false,
-          }}
-        />
+      <Stack initialRouteName="(space)">
+        <Stack.Screen name="(space)" options={{ headerShown: false }} />
+        <Stack.Screen name="login" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: "modal", title: "Modal" }} />
       </Stack>
