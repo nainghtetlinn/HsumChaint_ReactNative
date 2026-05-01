@@ -1,6 +1,6 @@
 import { useSpace } from "@/hooks/space";
 import type { SpaceSchema } from "@/schemas/space-schema";
-import images from "@assets/images";
+import icons from "@assets/icons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Controller } from "react-hook-form";
@@ -41,10 +41,10 @@ const SpaceForm = ({ submitLabel, initialValues, onSubmit }: SpaceFormProps) => 
       <ScrollView className="flex-1" contentContainerClassName="py-6 px-5 gap-6">
         <View className="items-center">
           <View className="relative bg-[#d9d9d9] w-[100] h-[100] rounded-full items-center justify-center">
-            <Image className="w-10 h-10" source={images.solarCameraBoldDuotone} />
+            <Image className="w-10 h-10" source={icons.cameraBoldDuotone} />
             {/* TODO: implement image picker */}
             <TouchableOpacity className="border-yellow-700 border bg-natural-white absolute bottom-0 right-0 w-8 h-8 rounded-full justify-center items-center">
-              <Image className="w-5 h-5" source={images.camera} />
+              <Image className="w-5 h-5" source={icons.camera} />
             </TouchableOpacity>
           </View>
         </View>
@@ -91,7 +91,7 @@ const SpaceForm = ({ submitLabel, initialValues, onSubmit }: SpaceFormProps) => 
               <Button
                 title="Add"
                 size={"xs"}
-                leftIcon={<MaterialCommunityIcons name="plus" />}
+                leftIcon={<Image className="w-4 h-4" source={icons.plus} />}
                 disabled={phoneFields.fields.length === 4}
                 onPress={handleAddPhoneField}
               />
