@@ -8,7 +8,7 @@ import {
   createMaterialTopTabNavigator,
 } from "@react-navigation/material-top-tabs";
 import type { ParamListBase, TabNavigationState } from "@react-navigation/native";
-import { Stack, withLayoutContext } from "expo-router";
+import { Stack, useRouter, withLayoutContext } from "expo-router";
 import { TouchableOpacity, View } from "react-native";
 
 const { Navigator } = createMaterialTopTabNavigator();
@@ -21,12 +21,14 @@ export const MaterialTopTabs = withLayoutContext<
 >(Navigator);
 
 const JoinedLayout = () => {
+  const router = useRouter();
+
   return (
     <>
       <Stack.Screen
         options={{
           headerRight: () => (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => router.push("/(space)/space-info")}>
               <Image className="w-6 h-6" source={icons.filter} />
             </TouchableOpacity>
           ),

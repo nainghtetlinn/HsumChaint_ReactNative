@@ -7,6 +7,7 @@ const SpaceLayout = () => {
       <Stack.Screen name="(joined-space-tabs)" options={{ title: "Space" }} />
       <Stack.Screen name="create-space" options={{ title: "Create Space" }} />
       <Stack.Screen name="edit-space" options={{ title: "Edit Space Info" }} />
+      <Stack.Screen name="space-info" options={{ title: "Space Info" }} />
     </Stack>
   );
 };
