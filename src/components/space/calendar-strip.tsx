@@ -41,6 +41,8 @@ const CalendarStrip = () => {
       <View className="flex-row items-center justify-between bg-grey-100 p-2 rounded-lg">
         <TouchableOpacity
           onPress={() => handleMonthChange(-1)}
+          accessibilityRole="button"
+          accessibilityLabel="Previous month"
           className="bg-natural-white p-0.5 rounded-sm shadow-drop"
         >
           <Image className="w-6 h-6" source={icons.arrowLeft} />
@@ -50,6 +52,8 @@ const CalendarStrip = () => {
 
         <TouchableOpacity
           onPress={() => handleMonthChange(1)}
+          accessibilityRole="button"
+          accessibilityLabel="Next month"
           className="bg-natural-white p-0.5 rounded-sm shadow-drop"
         >
           <Image className="w-6 h-6" source={icons.arrowRight} />
@@ -64,6 +68,8 @@ const CalendarStrip = () => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.toISOString()}
         contentContainerStyle={{ gap: 8 }}
+        initialNumToRender={daysInMonth.length}
+        maxToRenderPerBatch={daysInMonth.length}
         renderItem={({ item }) => {
           const isSelected = isSameDay(item, selectedDate);
           return (
