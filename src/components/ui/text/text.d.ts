@@ -3,6 +3,6 @@ import type { TextProps as RNTextProps } from "react-native";
 import { textVariants } from ".";
 
 export type TextProps = {
-  title: string;
+	title: string;
 } & VariantProps<typeof textVariants> &
-  RNTextProps;
+	RNTextProps;

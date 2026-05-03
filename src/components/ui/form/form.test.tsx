@@ -1,7 +1,7 @@
-import { fireEvent, render, screen, waitFor } from "@/lib/test-utils";
 import { useEffect } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Text } from "react-native";
+import { fireEvent, render, screen, waitFor } from "@/lib/test-utils";
 import { FormContainer, FormInputField } from ".";
 
 type TestValues = { email: string };

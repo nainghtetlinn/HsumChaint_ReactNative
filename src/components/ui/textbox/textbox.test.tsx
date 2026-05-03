@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from "@/lib/test-utils";
 import { Text } from "react-native";
+import { fireEvent, render, screen } from "@/lib/test-utils";
 import { Textbox } from ".";
 
 describe("Textbox", () => {
@@ -36,15 +36,9 @@ describe("Textbox", () => {
   });
 
   it("should apply icon size based on size prop", () => {
-    const Icon = ({
-      color,
-      size,
-      testID,
-    }: {
-      color?: string;
-      size?: number;
-      testID: string;
-    }) => <Text testID={testID}>{`${color}-${size}`}</Text>;
+    const Icon = ({ color, size, testID }: { color?: string; size?: number; testID: string }) => (
+      <Text testID={testID}>{`${color}-${size}`}</Text>
+    );
 
     render(<Textbox size="sm" leftIcon={<Icon testID="left-icon" />} />);
 

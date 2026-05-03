@@ -1,10 +1,11 @@
+import type { VariantProps } from "class-variance-authority";
+import type { ReactNode } from "react";
 import { TouchableOpacityProps } from "react-native";
+import { buttonVariants } from ".";
 
-type ButtonProps = TouchableOpacityProps &
-  Readonly<{
-    title: string;
-    leftIcon?: ReactNode;
-    textClassName?: string;
-    variant?: "primary" | "secondary" | "outline";
-    size?: "sm" | "md" | "lg";
-  }>;
+type ButtonProps = {
+	title: string;
+	leftIcon?: ReactNode;
+	textClassName?: string;
+} & VariantProps<typeof buttonVariants> &
+	TouchableOpacityProps;

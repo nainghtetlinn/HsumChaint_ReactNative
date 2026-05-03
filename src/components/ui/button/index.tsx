@@ -1,9 +1,10 @@
+import { cva } from "class-variance-authority";
+import { cloneElement, isValidElement, type ReactElement } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 import { cn } from "@/lib/utils";
-import { type VariantProps, cva } from "class-variance-authority";
-import { type ReactElement, type ReactNode, cloneElement, isValidElement } from "react";
-import { Text, TouchableOpacity, type TouchableOpacityProps, View } from "react-native";
+import type { ButtonProps } from "./button";
 
-const buttonVariants = cva("flex-row items-center justify-center rounded-xl gap-2.5", {
+export const buttonVariants = cva("flex-row items-center justify-center rounded-xl gap-2.5", {
   variants: {
     variant: {
       primary: "bg-yellow-500",
@@ -65,13 +66,6 @@ const iconSizeVariants = {
   md: 20,
   lg: 24,
 };
-
-export type ButtonProps = {
-  title: string;
-  leftIcon?: ReactNode;
-  textClassName?: string;
-} & VariantProps<typeof buttonVariants> &
-  TouchableOpacityProps;
 
 export const Button = ({
   title,

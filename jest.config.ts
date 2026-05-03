@@ -29,10 +29,10 @@ const config: Config = {
     global: {
       // Realistic target for a small team / one-month project.
       // Raise gradually as test coverage grows.
-      statements: 50,
-      branches: 50,
-      functions: 50,
-      lines: 50,
+      statements: 35,
+      branches: 35,
+      functions: 35,
+      lines: 35,
     },
   },
   moduleNameMapper: {

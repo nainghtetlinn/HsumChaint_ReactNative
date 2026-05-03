@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from "@/lib/test-utils";
 import { Text } from "react-native";
+import { fireEvent, render, screen } from "@/lib/test-utils";
 import { Button } from ".";
 
 describe("Button", () => {

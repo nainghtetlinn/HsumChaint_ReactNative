@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { Link as ExpoLink, type LinkProps } from "expo-router";
+import { cn } from "@/lib/utils";
 
 export const Link = ({ className, ...props }: LinkProps) => {
   return (

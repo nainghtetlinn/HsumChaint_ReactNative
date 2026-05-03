@@ -1,80 +1,34 @@
-import { Textbox } from "@/components/ui/textbox";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { useState } from "react";
-import { ScrollView, View } from "react-native";
+import images from "@assets/images";
+import { router } from "expo-router";
+import { View } from "react-native";
+import { Button } from "@/components/ui/button";
+import { DefaultTemplate } from "@/components/ui/template";
+import { Text } from "@/components/ui/text";
+import { useAuthUser } from "@/stores/auth-user";
 
 export default function HomeScreen() {
-  const [show, setShow] = useState(false);
-  const [search, setSearch] = useState("");
+  const user = useAuthUser((state) => state.user);
+  const clearSession = useAuthUser((state) => state.clearSession);
+
+  const handleLogout = () => {
+    clearSession();
+    router.replace("/(auth)" as never);
+  };
 
   return (
-    <View className="flex-1 py-20 px-8 bg-white">
-      <ScrollView contentContainerClassName="gap-4">
-        <Textbox
-          secureTextEntry={!show}
-          placeholder="Password"
-          rightIcon={
-            show ? (
-              <MaterialCommunityIcons name="eye-closed" />
-            ) : (
-              <MaterialCommunityIcons name="eye-outline" />
-            )
-          }
-          rightIconButtonProps={{
-            onPress: () => {
-              setShow(!show);
-            },
-          }}
+    <DefaultTemplate bgImage={images.bgFrame1} className="justify-center">
+      <View className="gap-4 rounded-3xl bg-natural-white/90 p-6">
+        <Text title="Home" variant="h4" weight="bold" />
+        <Text
+          title={user ? `Welcome, ${user.username}` : "Welcome to Hsum Chaint"}
+          variant="body1"
+          weight="medium"
         />
-        <Textbox
-          secureTextEntry={!show}
-          placeholder="Password"
-          size={"sm"}
-          rightIcon={
-            show ? (
-              <MaterialCommunityIcons name="eye-closed" />
-            ) : (
-              <MaterialCommunityIcons name="eye-outline" />
-            )
-          }
-          rightIconButtonProps={{
-            onPress: () => {
-              setShow(!show);
-            },
-          }}
-        />
-        <Textbox
-          value={search}
-          onChangeText={setSearch}
-          placeholder="Search"
-          variant={"contained"}
-          leftIcon={<MaterialIcons name="search" />}
-          rightIcon={<MaterialIcons name="close" />}
-          rightIconButtonProps={{
-            onPress: () => {
-              setSearch("");
-            },
-          }}
-        />
-        <Textbox
-          value={search}
-          onChangeText={setSearch}
-          placeholder="Search"
-          variant={"contained"}
-          size={"sm"}
-          leftIcon={<MaterialIcons name="search" />}
-          rightIcon={<MaterialIcons name="close" />}
-          rightIconButtonProps={{
-            onPress: () => {
-              setSearch("");
-            },
-          }}
-        />
-        <Textbox placeholder="Text" />
-        <Textbox placeholder="Text" size={"sm"} />
-        <Textbox placeholder="Text" multiline numberOfLines={3} />
-      </ScrollView>
-    </View>
+        {user ? (
+          <Text title={`Phone: ${user.phone} | Role: ${user.userType}`} className="opacity-70" />
+        ) : null}
+        <Button title="Logout" variant="outline" onPress={handleLogout} />
+      </View>
+    </DefaultTemplate>
   );
 }
