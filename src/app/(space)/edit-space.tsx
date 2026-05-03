@@ -1,5 +1,5 @@
-import { SpaceForm } from "@/components/space";
 import { View } from "react-native";
+import { SpaceForm } from "@/components/space";
 
 const EditSpaceScreen = () => {
   return (

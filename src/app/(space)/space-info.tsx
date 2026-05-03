@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Image } from "@/components/ui/image";
-import { Text } from "@/components/ui/text";
 import icons from "@assets/icons";
 import { useRouter } from "expo-router";
 import { TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Button } from "@/components/ui/button";
+import { Image } from "@/components/ui/image";
+import { Text } from "@/components/ui/text";
 
 const SpaceInfo = () => {
   const insets = useSafeAreaInsets();

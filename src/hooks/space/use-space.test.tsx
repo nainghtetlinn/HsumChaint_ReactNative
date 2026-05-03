@@ -1,7 +1,7 @@
-import { fireEvent, render, screen, waitFor } from "@/lib/test-utils";
-import type { SpaceSchema } from "@/schemas/space-schema";
 import { useWatch } from "react-hook-form";
 import { Pressable, Text, View } from "react-native";
+import { fireEvent, render, screen, waitFor } from "@/lib/test-utils";
+import type { SpaceSchema } from "@/schemas/space-schema";
 import { useSpace } from "./use-space";
 
 const Harness = ({

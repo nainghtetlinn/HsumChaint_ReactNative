@@ -1,8 +1,8 @@
+import icons from "@assets/icons";
+import { View } from "react-native";
 import { DonorItem } from "@/components/space";
 import { Button } from "@/components/ui/button";
 import { Image } from "@/components/ui/image";
-import icons from "@assets/icons";
-import { View } from "react-native";
 
 const DonorListTab = () => {
   return (

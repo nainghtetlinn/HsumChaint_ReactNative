@@ -20,7 +20,6 @@ jest.mock("@assets/icons", () => ({
 }));
 
 jest.mock("../ui/image", () => {
-  const React = require("react");
   const { Image } = require("react-native");
   return {
     Image: (props: any) => <Image {...props} />,

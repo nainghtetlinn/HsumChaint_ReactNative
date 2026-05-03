@@ -1,5 +1,3 @@
-import { useSpace } from "@/hooks/space";
-import type { SpaceSchema } from "@/schemas/space-schema";
 import icons from "@assets/icons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useHeaderHeight } from "@react-navigation/elements";
@@ -7,6 +5,8 @@ import { Controller } from "react-hook-form";
 import { Text as ReactText, ScrollView, TouchableOpacity, View } from "react-native";
 import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useSpace } from "@/hooks/space";
+import type { SpaceSchema } from "@/schemas/space-schema";
 import { Button } from "../ui/button";
 import { FormInputField } from "../ui/form";
 import { Image } from "../ui/image";

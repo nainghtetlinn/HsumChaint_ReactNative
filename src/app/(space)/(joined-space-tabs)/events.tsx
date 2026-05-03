@@ -1,5 +1,5 @@
-import { EventItem } from "@/components/space";
 import { View } from "react-native";
+import { EventItem } from "@/components/space";
 
 const EventsTab = () => {
   return (

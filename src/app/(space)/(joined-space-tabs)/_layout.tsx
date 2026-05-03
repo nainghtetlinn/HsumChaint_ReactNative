@@ -1,15 +1,15 @@
-import { CalendarStrip } from "@/components/space";
-import { Image } from "@/components/ui/image";
-import { Text } from "@/components/ui/text";
 import icons from "@assets/icons";
 import {
+  createMaterialTopTabNavigator,
   type MaterialTopTabNavigationEventMap,
   type MaterialTopTabNavigationOptions,
-  createMaterialTopTabNavigator,
 } from "@react-navigation/material-top-tabs";
 import type { ParamListBase, TabNavigationState } from "@react-navigation/native";
 import { Stack, useRouter, withLayoutContext } from "expo-router";
 import { TouchableOpacity, View } from "react-native";
+import { CalendarStrip } from "@/components/space";
+import { Image } from "@/components/ui/image";
+import { Text } from "@/components/ui/text";
 
 const { Navigator } = createMaterialTopTabNavigator();
 

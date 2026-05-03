@@ -12,7 +12,6 @@ jest.mock("@assets/icons", () => ({
 }));
 
 jest.mock("@expo/vector-icons/MaterialCommunityIcons", () => {
-  const React = require("react");
   const { Text } = require("react-native");
   return (props: any) => <Text {...props} />;
 });
@@ -22,7 +21,6 @@ jest.mock("@react-navigation/elements", () => ({
 }));
 
 jest.mock("react-native-keyboard-controller", () => {
-  const React = require("react");
   const { View } = require("react-native");
   return {
     KeyboardAvoidingView: ({ children, ...props }: any) => <View {...props}>{children}</View>,
@@ -34,7 +32,6 @@ jest.mock("react-native-safe-area-context", () => ({
 }));
 
 jest.mock("../ui/button", () => {
-  const React = require("react");
   const { Pressable, Text } = require("react-native");
   return {
     Button: ({ title, onPress, disabled }: any) => (
@@ -46,7 +43,6 @@ jest.mock("../ui/button", () => {
 });
 
 jest.mock("../ui/form", () => {
-  const React = require("react");
   const { Text } = require("react-native");
   return {
     FormInputField: ({ label, name }: any) => <Text>{`${label}:${name}`}</Text>,
@@ -54,7 +50,6 @@ jest.mock("../ui/form", () => {
 });
 
 jest.mock("../ui/image", () => {
-  const React = require("react");
   const { Image } = require("react-native");
   return {
     Image: (props: any) => <Image {...props} />,
@@ -62,7 +57,6 @@ jest.mock("../ui/image", () => {
 });
 
 jest.mock("../ui/text", () => {
-  const React = require("react");
   const { Text } = require("react-native");
   return {
     Text: ({ title, ...props }: any) => <Text {...props}>{title}</Text>,
@@ -70,7 +64,6 @@ jest.mock("../ui/text", () => {
 });
 
 jest.mock("../ui/textbox", () => {
-  const React = require("react");
   const { Pressable, Text, View } = require("react-native");
   return {
     Textbox: ({ placeholder, rightIconButtonProps }: any) => (

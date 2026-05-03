@@ -1,11 +1,10 @@
-import { cn } from "@/lib/utils";
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   type ComponentPropsWithRef,
-  type ReactElement,
-  type ReactNode,
   cloneElement,
   isValidElement,
+  type ReactElement,
+  type ReactNode,
 } from "react";
 import {
   TextInput,
@@ -14,6 +13,7 @@ import {
   type TouchableOpacityProps,
   View,
 } from "react-native";
+import { cn } from "@/lib/utils";
 
 const textboxVariants = cva("flex-row items-center rounded-lg gap-1.5", {
   variants: {

@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import { Text as RnText } from "react-native";
+import { cn } from "@/lib/utils";
 import type { TextProps } from "./text";
 
 export const textVariants = cva("text-natural-black", {

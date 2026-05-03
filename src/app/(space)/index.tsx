@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
-import { Image } from "@/components/ui/image";
-import { Text } from "@/components/ui/text";
 import icons from "@assets/icons";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { Redirect, useRouter } from "expo-router";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Button } from "@/components/ui/button";
+import { Image } from "@/components/ui/image";
+import { Text } from "@/components/ui/text";
 
 const joined = true; // TODO implement space joined or not state
 
